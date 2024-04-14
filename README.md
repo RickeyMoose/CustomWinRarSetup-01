@@ -2,8 +2,7 @@
 
 By Ricky Moose (STM)
 
-This READ ME will illustrate the process of performing a WinRAR silent install with the custom settings that I use. Under Windows 11 we have the new and **LESS** **improved** “**show more options**” context menu.   
-This automation will install WinRAR using the **LEGACY context menus** option along with some custom entries like **RAR with DATE**.
+This READ ME will illustrate the process of performing a WinRAR silent install with the custom settings that I use. Under Windows 11 we have the new and **LESS** **improved** “**show more options**” context menu. This automation will install WinRAR using the **LEGACY context menus** option along with some custom entries like **RAR with DATE**.
 
 
 EG:
