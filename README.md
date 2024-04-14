@@ -2,19 +2,19 @@
 
 By Ricky Moose (STM)
 
-This READ ME will illustrate the process of performing a WinRAR silent install with the custom settings that I use. Under Windows 11 we have the new and **LESS** **improved** “**show more options**” context menu. This automation will install WinRAR using the **LEGACY context menus** option along with some custom entries like **RAR with DATE**.
+This READ ME will illustrate the process of performing a WinRAR silent install with the custom settings that I use. Under Windows 11 we have the new and :poop: **LESS** **improved** :poop: “**show more options**” context menu. This automation will install WinRAR using the **LEGACY context menus** option along with some custom entries like **RAR with DATE**.
 
 
-EG:
+EG: <br>
 ![image](https://github.com/RickeyMoose/CustomWinRarSetup-01/assets/167007057/cda4134b-fb4e-4990-a51b-c105d20c821b)
 
-
+<br><br>
 In the WinRAR GUI you would set these manually via **these 2 options**:
 
 ![image](https://github.com/RickeyMoose/CustomWinRarSetup-01/assets/167007057/72492283-f2cb-40cb-912c-b5e662a87b38)
 
-
-There are 2 main bat files you can run. Because my normal use case is running this install from within a VM via shared folders. and because of a VMware security limitation there is the file staging bat file called: “**!Winrar_HighestVersion_stage_then_install.bat**” which is used to stage the files to **%temp%** folder on my VM and then will run the primary file “**Winrar_Silent_Install-HighestVersionVariant.bat**” which one you run to kick off the process is up to you as they essentially have the same end result but the stager is required as a VM workaround. Under the VM, if I had instead just copied the payload to the desktop for example I could have skipped using the stager bat file.
+<br><br>
+There are 2 main bat files you can run. Because my normal use case is running this install from within a VM via shared folders. and because of a VMware security limitation there is the file staging bat file called: **!Winrar_HighestVersion_stage_then_install.bat** which is used to stage the files to **%temp%** folder on my VM and then will run the primary file “**Winrar_Silent_Install-HighestVersionVariant.bat**” which one you run to kick off the process is up to you as they essentially have the same end result but the stager is required as a VM workaround. Under the VM, if I had instead just copied the payload to the desktop for example I could have skipped using the stager bat file.
 
 The primary file requires elevation to import registry keys and will attempt to self-elevate, you will need to allow the UAC warning if your UAC is enabled.
 
@@ -28,8 +28,11 @@ You will then be given a 10 second warning on what build the script will install
 
 **Winrar_Settings.reg** and **Winrar_Settings_Enable_Legacy_ContextMenus.reg**
 
-The Legacy reg file is meant for Windows 11, so if you are not using win11 just rename the file to skip importing it.
+**NOTE:** You can re-create the file **Winrar_Settings.reg** by setting up WinRAR the way you like and export the settings. Where the 2nd file contains keys that I extracted after modifying the context menu settings in the GUI.
 
+The Legacy reg file is meant for Windows 11, so if you are not using Win 11 just rename the file to skip importing it.
+
+<br>
 Moving on, WinRAR will get ran one time to allow it to do any 1st time run setup and will then be closed after a few seconds. Afterwards the custom registry files will be imported a 2nd time to re-apply any changes that WinRAR may have modified on 1st run such as the context menu settings.
 
 Because I used the stager, it will then open **%temp%** so that you can manually delete the staged files if you so choose to do.
@@ -45,9 +48,9 @@ File list:
 ![image](https://github.com/RickeyMoose/CustomWinRarSetup-01/assets/167007057/eb177fe2-2caa-484d-84f4-0dc24bb6d5fc)
 
 
-**IMPORTANT: You will need to download your own WinRAR binary files from** <https://www.rarlab.com/download.htm> like in the above example. The script only knows to look for x64 so you will have to modify if using 32bit builds but then you are not using Win 11 at that point.
+**IMPORTANT: You will need to download your own WinRAR binary files from** <https://www.rarlab.com/download.htm> and place them in the working directory like in the above example. The script only knows to look for x64 builds so you will have to modify if using 32bit builds but then you are probably not using Win 11 at that point. 
 
-EG: **winrar-x32-700.exe** VS **winrar-x64-700.exe**
+EG: winrar-**x32**-700.exe VS winrar-**x64**-700.exe
 
 EOF
 
