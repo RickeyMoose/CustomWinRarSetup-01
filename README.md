@@ -10,7 +10,8 @@ EG:
 ![image](https://github.com/RickeyMoose/CustomWinRarSetup-01/assets/167007057/cda4134b-fb4e-4990-a51b-c105d20c821b)
 
 
-In the WinRAR GUI you would set these manually via these 2 options:
+In the WinRAR GUI you would set these manually via **these 2 options**:
+
 ![image](https://github.com/RickeyMoose/CustomWinRarSetup-01/assets/167007057/72492283-f2cb-40cb-912c-b5e662a87b38)
 
 
@@ -52,3 +53,4 @@ EG: **winrar-x32-700.exe** VS **winrar-x64-700.exe**
 EOF
 
 
+![](https://github.com/RickeyMoose/CustomWinRarSetup-01/blob/main/Usage_Animation.gif)
